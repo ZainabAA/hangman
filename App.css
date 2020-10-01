@@ -1,0 +1,115 @@
+:root{
+    background-image: linear-gradient(rgb(140, 207, 179), rgb(146, 146, 190));
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+body{
+     /*margin-top: 0; 
+    height: 100%;
+    width: 100%;*/
+    text-align: center; 
+    box-sizing: border-box;
+}
+h1{
+    font-size: 4rem;
+}
+header{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.word-boxes{
+    margin: 1em;
+    display: grid;
+    margin-top: 5em;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, 30px);
+}
+
+.box{
+    background-color: white;
+    height: 30px;
+    width: 100%;
+    border: 2px solid black;
+    box-shadow: 0 0 10px 5px teal;
+}
+
+.box p{
+    text-align: center;
+    margin: auto;
+    background-color: teal;
+    height: 100%;
+}
+
+.animated-box{
+    animation-name: wordBoxAnim;
+    animation-duration:  1.5s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.89, 2.1);
+}
+
+@keyframes wordBoxAnim{
+    0%{
+        box-shadow: none;
+    }
+
+    100%{
+        box-shadow: 0 0 10px 5px teal;
+    }
+}
+
+.definition{
+    font-weight: bold;
+}
+
+.input-container{
+    margin-top: 3em;
+}
+
+.btn{
+    margin: 1em;
+    background-color: teal;
+    border: 1.5px solid black;
+}
+
+.btn:hover{
+    border-color: rgb(83, 83, 83);
+}
+
+.input-container input{
+    width: 3em;
+}
+
+.input-container input:active, .input-container input:focus {
+    outline-style: none;
+}
+
+.loading-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-container p{
+    font-weight: bold;
+}
+.loading-circle{
+    border: 5px solid grey;
+    border-top: 5px solid black;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    /* transform: rotate(45deg);
+    transition: transform 1s linear; */
+    animation: loadingAnim 3s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loadingAnim{
+    100%{
+        transform: rotate(360deg);
+    }
+}
